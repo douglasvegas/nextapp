@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "pro": "pm2 start npm --name 'next' -- start"
+    "pro": "pm2 start npm --name 'next' -- start",
+    "deploy": "pm2 delete all & npm run build & npm run pro"
   },
   "dependencies": {
     "cowsay-browser": "^1.1.8",
