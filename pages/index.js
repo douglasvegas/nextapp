@@ -43,7 +43,7 @@ const Home = ({json, jsonList}) => {
                   return null
                 })
               }
-              <li key={"all"} className={"seeAll"} onClick={() => seeAll(0)} onMouseEnter={() => seeAll(0)} >{"其他"}</li>
+              <li key={"all"} className={"seeAll"} onClick={() => seeAll(0)} onMouseEnter={() => seeAll(0)} >{"其他."}</li>
             </ul>
             <div className={'allCategories'} onMouseLeave={() => seeAll(1)}>
               {
