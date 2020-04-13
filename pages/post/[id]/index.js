@@ -80,7 +80,7 @@ const Post = ({json}) => {
                     margin-bottom: 50px;
                     border-radius: 4px;
                     background-color: #fff;
-                    border: 1px solid #e3eaef;
+                    // border: 1px solid #e3eaef;
                     -webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
                     box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
                 }
