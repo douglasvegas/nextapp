@@ -89,7 +89,7 @@ const Post = ({json}) => {
                     font-size: 24px;
                     padding:0 5%;
                     color:#0c0c0c;
-                    font-weight:300;
+                    font-weight:500;
                     margin-bottom: 50px;
                     word-break: break-word;
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", 微软雅黑, sans-serif;
