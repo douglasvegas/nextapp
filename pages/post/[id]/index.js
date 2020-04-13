@@ -119,6 +119,8 @@ const Post = ({json}) => {
                         margin-left: 0;
                         margin-top: 0;
                         border-radius:0;
+                        overflow: hidden;
+                        border:none;
                     }
                     .contentWrap .title {
                         text-align:left;
