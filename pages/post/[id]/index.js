@@ -35,11 +35,11 @@ const Post = ({json}) => {
             </div>
             <style jsx global>
                 {`
-                  body {
-                    margin:0;
-                    // background-color: #f0f2f5;
-                    background-color: #24292e
-                  }
+                  // body {
+                  //   margin:0;
+                  //   // background-color: #f0f2f5;
+                  //   background-color: #24292e
+                  // }
                   .content img {
                         border-radius: 8px;
                         height: auto;
@@ -65,7 +65,8 @@ const Post = ({json}) => {
             <style jsx>
                 {`
                 body {
-                    background: #f5f5d5;
+                    // background: #f5f5d5;
+                    background-color: #FEF5DD;
                 }
                 .topTip {
                     border-width: 5px 0 0;
@@ -75,11 +76,11 @@ const Post = ({json}) => {
                 }
                 .contentWrap {
                     margin-top: 30px;
-                    margin-left: 25%;
-                    width: 50%;
-                    margin-bottom: 50px;
+                    margin-left: 15%;
+                    width: 80%;
+                    margin-bottom: 30px;
                     border-radius: 4px;
-                    background-color: #fff;
+                    background-color: rgb(255, 232, 191);
                     border: 1px solid #e3eaef;
                     -webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
                     box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
