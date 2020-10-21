@@ -40,7 +40,6 @@ const Post = ({json}) => {
                   //   // background-color: #f0f2f5;
                   //   background-color: #24292e
                   // }
-                  
                   .content img {
                         border-radius: 8px;
                         height: auto;
