@@ -24,7 +24,7 @@ export default class Footer extends Component {
                     margin-bottom: 20px;
                   }
                   a {
-                    color: white;
+                    color: #24292e;
                     text-decoration: none;
                     font-size:12px;
                     margin: 0 auto;

@@ -37,7 +37,7 @@ const Post = ({json}) => {
                 {`
                   body {
                     margin:0;
-                    background-color: #24292e
+                    background-color: #FEF5DD
                   }
                   .content img {
                         border-radius: 8px;
@@ -63,10 +63,6 @@ const Post = ({json}) => {
             </style>
             <style jsx>
                 {`
-                body {
-                    // background: #f5f5d5;
-                    background-color: #FEF5DD !important;
-                }
                 .topTip {
                     border-width: 5px 0 0;
                     border-top-style: solid;

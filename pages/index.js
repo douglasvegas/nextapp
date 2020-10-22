@@ -88,8 +88,7 @@ const Home = ({json, jsonList}) => {
         {`
           body {
             margin: 0;
-            // background-color: #f0f2f5;
-            background: black;
+            background: #FEF5DD;
           }
           .categoryNav {
             background: #CDF564;
@@ -209,7 +208,6 @@ const Home = ({json, jsonList}) => {
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", 微软雅黑, sans-serif;
                 }
                 .postItem {
-                    // border-bottom:1px solid #f5f5f5;
                     border-bottom:1px solid #f3e674d1;
                     padding:10px;
                 }
@@ -242,16 +240,9 @@ const Home = ({json, jsonList}) => {
                     margin-bottom:20px;
                     border-radius:4px;
                     background-color: #fff;
-                    // background: #ffeb3b;
-                    // border: 1px solid #e3eaef;
                     -webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
                     box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
-                    
-                    // box-shadow: 
-                    //  -10px 0px 8px #ffeb3b, /*左边阴影*/
-                    //  0px -10px 8px #ffc107, /*上边阴影*/ 
-                    //  10px 0px 8px #ff9800, /*右边阴影*/ 
-                    //  0px 10px 8px #ff5722;"
+                   
                 }
                 .closeBtn {
                   font-size: 18px;
