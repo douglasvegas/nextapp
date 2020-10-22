@@ -73,8 +73,7 @@ const Post = ({json}) => {
                     margin-top: 30px;
                     margin-left: 15%;
                     width: 80%;
-                    //margin-bottom: 30px;
-                    margin-bottom: 0px;
+                    margin-bottom: 30px;
                     border-radius: 4px;
                     background-color: rgb(255, 232, 191);
                     border: 1px solid #e3eaef;
