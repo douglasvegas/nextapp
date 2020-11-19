@@ -30,7 +30,7 @@ const Post = ({json}) => {
                 </p>
                 <div className={'content'} dangerouslySetInnerHTML={{__html: json.content}}></div>
                 <div className={'contactMe'}>
-                    <span>Email：sunstar1227@163.com</span>
+                    <span>📧Email：sunstar1227@163.com</span>
                 </div>
             </div>
             <style jsx global>
