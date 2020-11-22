@@ -1,40 +1,71 @@
-import React from 'react'
-import Layout from '../components/layout'
-import Footer from "../components/footer"
-import fetch from "isomorphic-unfetch";
+import React, { Component, useContext } from "react"
 import Link from "next/link";
-import Header from '../components/header'
+import Layout from '../components/layout'
+import MenuContext from "./MenuContext";
+import Head from "next/head";
 
-const Home = ({ jsonList}) => {
+const Header = () => {
+  const {json} = useContext(MenuContext);
+  function seeAll(flag) {
+    if (flag == 0) {
+      console.log('show')
+      document.querySelector(".allCategories").style.display = 'block'
+    }
+    else if (flag == 1){
+      document.querySelector(".allCategories").style.display = 'none'
+    }
 
+  }
     return (
       <Layout>
-      <div className="bd">
-        <div className={"mainPage"}>
-          <Header />
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Think before you speak. Read before you think.｜Jarvis Sun</title>
+          <link rel="icon" href="/aiglab.png" />
+        </Head>
+        {/*<Head>*/}
+        {/*    <script data-ad-client="ca-pub-9856877633666184" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>*/}
+        {/*</Head>*/}
+        <nav className={'categoryNav'}>
+          <Link href={'/' } as={'/'} key={'icon'}>
+            <img src="/aiglabhome.svg" alt="" with="100px" height="100px" className={'homesvg'} />
+          </Link>
 
-          <div className={'list'}>
+          <ul>
             {
-              jsonList && jsonList.map(item => {
-                return (
-                  <div key={item.id} className={'postItem'} >
-                    <Link href={'/post/[id]'} as={'/post/'+ item.id }>
-                      <p className={'title'} key={'title_' + item.title}
-                      >{item.title}</p>
+              (json&& json.length>0) && json.map(item => {
+                if (item.StateFlag == 3) {
+                  return (
+                    <Link href={'/category/[name]' } as={'/category/'+ item.EngName} key={item.id}>
+                      <li>{item.name}</li>
                     </Link>
-                    <p className={'publish'}>
-                      <span className={'publishTime'}>  发布于  {item.create_at.split("T")[0].replace(/\-/g, '/')}</span>
-                    </p>
-                  </div>
-                )
+                  )
+                }
+                return null
               })
             }
+            <li key={"all"} className={"seeAll"} onClick={() => seeAll(0)} onMouseEnter={() => seeAll(0)} >{"其他"}</li>
+          </ul>
+          <div className={'allCategories'} onMouseLeave={() => seeAll(1)}>
+            {
+              (json&& json.length>0) && json.map( item => {
+                if (item.StateFlag == 2) {
+                  return (
+                    <Link href={'/category/[name]' } as={'/category/'+ item.EngName }   key={item.id}>
+                      <div className={'categoryItem'} >{item.name}</div>
+                    </Link>
+                  )
+                }
+                return null
+              })
+            }
+            <div className={'closeBtn'}></div>
+            <span className={'closeBtn'} onClick={() => seeAll(1)}>close</span>
           </div>
-        </div>
-      </div>
-      <Footer />
-      <style jsx global>
-        {`
+        </nav>
+        <div className="topTip" ></div>
+        <style jsx global>
+          {`
           body {
             margin: 0;
             background: #FEF5DD;
@@ -82,9 +113,9 @@ const Home = ({ jsonList}) => {
                     color: #CDF564;
                   }
         `}
-      </style>
-      <style jsx>
-        {`
+        </style>
+        <style jsx>
+          {`
           
           ul {
             display:flex;
@@ -224,16 +255,9 @@ const Home = ({ jsonList}) => {
                     }
                 }
         `}
-      </style>
-    </Layout>
-    )}
-
-export default Home
-
-Home.getInitialProps = async ({req, query}) => {
-  let urlList = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
-  urlList += "?PageSize=30";
-  let resList = await fetch(urlList);
-  let jsonList = await resList.json();
-  return {jsonList: jsonList.response}
+        </style>
+      </Layout>
+    )
 };
+
+export  default  Header;

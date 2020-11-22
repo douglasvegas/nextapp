@@ -1,25 +1,25 @@
 import React, { Component } from "react"
 
-import { initGA, logPageView } from "./ga.js"
+// import { initGA, logPageView } from "./ga.js"
 import Router from "next/router";
 import NProgress from 'nprogress'
 import Head from "next/head";
 
 
-Router.events.on('routeChangeStart', url => {
-    console.log(`Loading: ${url}`)
-    NProgress.start()
-})
-Router.events.on('routeChangeComplete', () => NProgress.done())
-Router.events.on('routeChangeError', () => NProgress.done())
+// Router.events.on('routeChangeStart', url => {
+//     console.log(`Loading: ${url}`)
+//     NProgress.start()
+// })
+// Router.events.on('routeChangeComplete', () => NProgress.done())
+// Router.events.on('routeChangeError', () => NProgress.done())
 
 export default class Layout extends Component {
     componentDidMount () {
-        if (!window.GA_INITIALIZED) {
-            initGA();
-            window.GA_INITIALIZED = true
-        }
-        logPageView()
+        // if (!window.GA_INITIALIZED) {
+        //     initGA();
+        //     window.GA_INITIALIZED = true
+        // }
+        // logPageView()
     }
 
     render () {

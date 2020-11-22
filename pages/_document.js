@@ -25,13 +25,6 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    {/*<script*/}
-                        {/*dangerouslySetInnerHTML={{*/}
-                            {/*__html: `*/}
-                        {/*<script data-ad-client="ca-pub-9856877633666184" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>*/}
-               {/*`*/}
-                        {/*}}*/}
-                    {/*/>*/}
                 </body>
             </Html>
         )

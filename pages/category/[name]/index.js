@@ -1,98 +1,63 @@
-import React, {Component} from 'react'
+import React, { useState, useEffect} from 'react'
 import fetch  from 'isomorphic-unfetch';
-import Head from 'next/head'
-import Router from 'next/router'
 import Link from 'next/link'
 import Layout from '../../../components/layout'
+import Header from "../../../components/header"
+import { useRouter } from 'next/router';
 
+const Category = (resProps) => {
+  const router = useRouter()
+  const [json, setJson] = useState(resProps.json.response);
+  const [PageSize, setPageSize] = useState(resProps.PageSize);
+  const [pageTotal, setpageTotal] = useState(resProps.pageTotal);
+  const [categoryEngName, setCategoryEngName] = useState(resProps.categoryEngName);
+  const [initPageIndex, setInitPageIndex] = useState(0)
 
-class Cowsay extends Component {
-  static async getInitialProps(ctx){
-    let {req, query} = ctx;
-    let categoryEngName = query.name;
-    let PageSize = 20;
-    let url = 'http://localhost:8080/api/v1/posts';
-    let protocol = '';
-    if(req) {
-      protocol = req.headers["x-forwarded-proto"] + '://';
-      if(req.headers.host.indexOf('localhost') == -1) {
-        url = `${protocol}aiglab.com/api/v1/posts`;
+  useEffect(() => {
+    getPosts();
+    const handleRouteChange = (url) => {
+      if(url.indexOf('category') != -1) {
+        let categoryEngName = url.replace('/category/','')
+        setCategoryEngName(categoryEngName);
+        setInitPageIndex(0);
       }
-    }   else if (window) {
-      protocol = window.location.protocol + '//';
-      if(window.location.href.indexOf('localhost') == -1) {
-        url = `${protocol}aiglab.com/api/v1/posts`;
-      }
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
     }
-    console.log('url:' + url)
-    url += "?PageSize=" + PageSize + "&CategoryName=" + categoryEngName;
+  }, [categoryEngName]);
+
+  useEffect(() => {
+      getPosts();
+  }, [initPageIndex]);
+
+  const getPage = (flag) => {
+    setInitPageIndex(Number(initPageIndex) + Number(flag));
+  };
+
+  const getPosts = async () => {
+    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
+    url += "?PageSize=" + PageSize + "&PageIndex=" + initPageIndex + "&CategoryName=" + categoryEngName;
     const res = await fetch(url);
     const json = await res.json();
     let pageTotal = Math.ceil(json.totalSize / PageSize);
-    return {json: json, PageSize, pageTotal, categoryEngName}
-  }
+    setpageTotal(pageTotal);
+    setJson(json.response);
+  };
 
-  constructor(props) {
-    super(props);
-    console.log(props.json)
-    this.state = {
-      categoryEngName: props.categoryEngName,
-      initPageIndex: 0,
-      PageSize:  props.PageSize,
-      pageTotal    : props.pageTotal,
-      json: props.json.response
-    };
-  }
-
-  getPage(flag) {
-    this.setState({
-      initPageIndex: Number(this.state.initPageIndex) + Number(flag)
-    }, () => {
-      console.log(this.state)
-      this.getPosts()
-    })
-  }
-
-  async getPosts() {
-    let url = 'http://localhost:8080/api/v1/posts';
-    let protocol = '';
-    protocol = window.location.protocol + '//';
-    if(window.location.href.indexOf('localhost') == -1) {
-      url = `${protocol}aiglab.com/api/v1/posts`;
-    }
-    console.log('url:' + url)
-    url += "?PageSize=" + this.state.PageSize + "&PageIndex=" + this.state.initPageIndex + "&CategoryName=" + this.state.categoryEngName;
-    const res = await fetch(url);
-    const json = await res.json();
-    console.log('json')
-    console.log(json)
-    // return;
-    this.setState({
-      json: json.response
-    })
-  }
-
-  render() {
-    let json = this.state.json
     return (
       <Layout>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Don't just learn, experience.｜Jarvis Sun</title>
-          <link rel="icon" href="/aiglab.png" />
-          <script data-ad-client="ca-pub-9856877633666184" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        </Head>
-        <div>
-          <div className="topTip" ></div>
+          <Header />
           <div className={'list'}>
-
             {
-
               json.length === 0 ?
-
                 (<div className={"noData"}>暂无数据</div>) :
-
-                json.map(item => {
+                json && json.map(item => {
                   return (
                     <div key={item.id} className={'postItem'} >
                       <Link href={'/post/[id]'} as={'/post/' + item.id}>
@@ -110,13 +75,13 @@ class Cowsay extends Component {
               json.length > 0 ?
                 <div className={"paginator"}>
                   {
-                    this.state.initPageIndex > 0 ?
-                      <span className={'prev'} onClick={() => {this.getPage(-1)}}>上一页</span>
+                    initPageIndex > 0 ?
+                      <span className={'prev'} onClick={() => {getPage(-1)}}>上一页</span>
                       :null
                   }
                   {
-                    this.state.initPageIndex <= this.state.pageTotal - 2  ?
-                      <span className={'next'} onClick={() => {this.getPage(1)}}>下一页</span>
+                    initPageIndex <= pageTotal - 2  ?
+                      <span className={'next'} onClick={() => {getPage(1)}}>下一页</span>
                       :null
                   }
                 </div>
@@ -220,42 +185,22 @@ class Cowsay extends Component {
 
                     `}
           </style>
-        </div>
       </Layout>
     )
-  }
 
 }
-// const Cowsay = ({json}) => {
-//   let initPageIndex = 0;
-//   function getPage(flag) {
-//     initPageIndex += flag
-//     console.log(initPageIndex)
-//   }
-//
-// }
-
-// Cowsay.getInitialProps = async ({req, query}) => {
-//   let categoryEngName = query.name;
-//   let url = 'http://localhost:8080/api/v1/posts';
-//   let protocol = '';
-//   if(req) {
-//     protocol = req.headers["x-forwarded-proto"] + '://';
-//     if(req.headers.host.indexOf('localhost') == -1) {
-//       url = `${protocol}aiglab.com/api/v1/posts`;
-//     }
-//   }   else if (window) {
-//     protocol = window.location.protocol + '//';
-//     if(window.location.href.indexOf('localhost') == -1) {
-//       url = `${protocol}aiglab.com/api/v1/posts`;
-//     }
-//   }
-//   console.log('url:' + url)
-//   url += "?PageSize=1&CategoryName=" + categoryEngName
-//   const res = await fetch(url);
-//   const json = await res.json();
-//   return {json: json.response}
-// }
 
 
-export default Cowsay
+export default Category;
+Category.getInitialProps = async (ctx) => {
+  let {req, query} = ctx;
+  let categoryEngName = query.name;
+  let PageSize = 20;
+  let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
+  url += "?PageSize=" + PageSize + "&CategoryName=" + categoryEngName;
+  const res = await fetch(url);
+  const json = await res.json();
+  let pageTotal = Math.ceil(json.totalSize / PageSize);
+  let resProps = {json, PageSize, pageTotal, categoryEngName};
+  return resProps;
+}

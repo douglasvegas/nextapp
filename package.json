@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "pro": "pm2 start npm --name 'next' -- start",
-    "deploy": "pm2 delete all & npm run build & npm run pro"
+    "deploy": "pm2 delete next & npm run build & npm run pro"
   },
   "dependencies": {
     "cowsay-browser": "^1.1.8",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "9.1.5",
+    "next": "^10.0.2",
     "nprogress": "^0.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",

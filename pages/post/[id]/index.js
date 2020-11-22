@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 import React from "react";
-import Link from "next/link"
 import Layout from "../../../components/layout"
 import Head from 'next/head'
-
+import Header from "../../../components/header"
 const Post = ({json}) => {
     const router = useRouter()
     const {id} = router.query
@@ -12,7 +11,6 @@ const Post = ({json}) => {
     return (
         <Layout>
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>{json.title} | Jarvis Sun</title>
                 <link rel="icon" href="/aiglab.png" />
                 <script data-ad-client="ca-pub-9856877633666184" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -22,8 +20,7 @@ const Post = ({json}) => {
                 <script src="/prism.js"></script>
             </Head>
         <div>
-            <div className="topTip" ></div>
-
+            <Header />
             <div className={'contentWrap'}>
                 <p className={'title'}>
                     <span>{json.title}</span>
@@ -133,28 +130,16 @@ const Post = ({json}) => {
         </Layout>
 
     )
-}
+};
+
+export default Post;
 
 Post.getInitialProps = async ({req, query}) => {
     let id = query.id;
-    let url = 'http://localhost:8080/api/v1/posts/'+id;
-    let protocol = '';
-    if(req) {
-        protocol = req.headers["x-forwarded-proto"] + '://';
-        if(req.headers.host.indexOf('localhost') == -1) {
-            url = `${protocol}aiglab.com/api/v1/posts/${id}`;
-        }
-    }   else if (window) {
-        protocol = window.location.protocol + '//';
-        if(window.location.href.indexOf('localhost') == -1) {
-            url = `${protocol}aiglab.com/api/v1/posts/${id}`;
-        }
-    }
-    console.log('url:' + url)
+    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts/'+id;
     const res = await fetch(url);
     const json = await res.json();
     return {json: json.response}
-}
+};
 
 
-export default Post

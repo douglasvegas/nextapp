@@ -1,21 +1,13 @@
 import React from 'react'
 import fetch  from 'isomorphic-unfetch';
-import Head from 'next/head'
-import Router from 'next/router'
 import Link from 'next/link'
 import Layout from '../../components/layout'
+import Header from "../../components/header"
 
 const Cowsay = ({json}) => {
     return (
         <Layout>
-            <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Don't just learn, experience.｜Jarvis Sun</title>
-                <link rel="icon" href="/aiglab.png" />
-                <script data-ad-client="ca-pub-9856877633666184" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            </Head>
-        <div>
-            <div className="topTip" ></div>
+            <Header />
             <div className={'list'}>
                 {
                     json.map(item => {
@@ -107,30 +99,16 @@ const Cowsay = ({json}) => {
 
                     `}
             </style>
-        </div>
         </Layout>
     )
 }
 
 Cowsay.getInitialProps = async ({req}) => {
-    let url = 'http://localhost:8080/api/v1/posts';
-    let protocol = '';
-    if(req) {
-        protocol = req.headers["x-forwarded-proto"] + '://';
-        if(req.headers.host.indexOf('localhost') == -1) {
-            url = `${protocol}aiglab.com/api/v1/posts`;
-        }
-    }   else if (window) {
-        protocol = window.location.protocol + '//';
-        if(window.location.href.indexOf('localhost') == -1) {
-            url = `${protocol}aiglab.com/api/v1/posts`;
-        }
-    }
-    console.log('url:' + url)
-    url += "?PageSize=15"
+    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
+    url += "?PageSize=15";
     const res = await fetch(url);
     const json = await res.json();
-    return {json: json.response}
+    return {json: json.response};
 }
 
 
