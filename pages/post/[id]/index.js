@@ -44,9 +44,17 @@ const Post = ({json}) => {
                     }
                    
                   @media (max-width: 680px) {
-                      .content {
-                        margin-bottom: 50px !important;
+                      .contentWrap {
+                         width: 100% !important;
+                        margin-left: 0 !important;
+                        margin-top: 0 !important;
+                        border-radius:0;
+                        overflow: hidden;
+                        margin-bottom: 0 !important;
+                        padding-top: 50px !important;
+                        border:none;
                       }
+                      
                       .content img {
                         border-radius: 8px;
                         height: auto;
@@ -68,20 +76,20 @@ const Post = ({json}) => {
                         border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
                     }
                     .contentWrap {
-                        margin-top: 30px;
-                        margin-left: 15%;
-                        width: 80%;
+                        margin-top: 80px;
+                        margin-left: 5%;
+                        width: 50%;
                         margin-bottom: 30px;
                         border-radius: 4px;
                         background-color: rgb(255, 232, 191);
                         border: 1px solid #e3eaef;
                         -webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
                         box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+                        // padding-top: 50px !important;
                     }
                     .contentWrap .title {
-                        text-align:left;
+                        text-align:center;
                         font-size: 24px;
-                        padding:0 5%;
                         color:#0c0c0c;
                         font-weight:500;
                         margin-bottom: 50px;
@@ -92,9 +100,8 @@ const Post = ({json}) => {
                     .contentWrap .content {
                         font-weight:400;
                         font-size:16px;
-                        padding:0 5%;
+                        padding:0 2%;
                         color:#333;
-                        margin-bottom: 60px;
                     }
                     
                     .contactMe {
@@ -114,12 +121,13 @@ const Post = ({json}) => {
                             margin-top: 0;
                             border-radius:0;
                             overflow: hidden;
+                            padding-top: 50px !important;
                             border:none;
                         }
+                        
                         .contentWrap .title {
-                            text-align:left;
+                            text-align: center;
                             font-size: 24px;
-                            padding:0 5%;
                             font-weight:300;
                             margin-bottom: 20px;
                         }

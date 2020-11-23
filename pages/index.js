@@ -38,6 +38,10 @@ const Home = ({ jsonList}) => {
             margin: 0;
             background: #FEF5DD;
           }
+          .bd {
+            padding-top: 30px;
+            background: #00BCD4;
+          }
           .categoryNav {
             background: #CDF564;
             position: relative;
@@ -53,6 +57,9 @@ const Home = ({ jsonList}) => {
             float: right;
           }
           @media (max-width: 680px) {
+              .bd {
+                  padding-top: 0px !important;
+              }
               ul {
                 display:flex;
                 flex-direction: row;
@@ -84,7 +91,10 @@ const Home = ({ jsonList}) => {
       </style>
       <style jsx>
         {`
-          
+          .bd {
+            padding-top: 30px;
+            background: #00BCD4;
+          }
           ul {
             display:flex;
             flex-direction: row;
@@ -112,8 +122,9 @@ const Home = ({ jsonList}) => {
           }
           
           .mainPage {
-            background: #00BCD4;
+            // background: #00BCD4;
             padding-bottom: 30px;
+            // margin-top: 80px;
           }
          
           .allCategories {
@@ -219,7 +230,8 @@ const Home = ({ jsonList}) => {
                       padding-bottom: 50px;
                     }
                     .mainPage {
-                          padding: 0;
+                      margin-top: 50px;
+                      padding: 0;
                     }
                 }
         `}

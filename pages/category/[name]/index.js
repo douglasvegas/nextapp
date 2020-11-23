@@ -163,11 +163,10 @@ const Category = (resProps) => {
                   color: #808080;
               }
               .list {
-                  margin-top:30px;
+                  margin-top:80px;
                   margin-left:25%;
                   width:50%;
                   margin-bottom:50px;
-                  // padding: 16px;
                   border-radius:4px;
                   background-color: #fff;
                   border: 1px solid #e3eaef;
@@ -178,8 +177,9 @@ const Category = (resProps) => {
                   .list {
                       width:100%;
                       margin-left:0;
-                      margin-top:0;
+                      margin-top: 50px;
                       border-radius:0px;
+                      margin-bottom: 0px;
                   }
               }
 

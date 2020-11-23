@@ -26,6 +26,7 @@ const Header = () => {
         {/*<Head>*/}
         {/*  <script data-ad-client='ca-pub-9856877633666184' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>*/}
         {/*</Head>*/}
+        <div  className={'headerWrap'}>
         <nav className={'categoryNav'}>
           <Link href={'/' } as={'/'} key={'icon'}>
             <img src='/aiglabhome.svg' alt='' with='100px' height='100px' className={'homesvg'} />
@@ -37,7 +38,7 @@ const Header = () => {
                 if (item.StateFlag == 3) {
                   return (
                     <Link href={'/category/[name]' } as={'/category/'+ item.EngName} key={item.id}>
-                      <li>{item.name}</li>
+                      <li onClick={() => seeAll(1)}>{item.name}</li>
                     </Link>
                   )
                 }
@@ -52,7 +53,7 @@ const Header = () => {
                 if (item.StateFlag == 2) {
                   return (
                     <Link href={'/category/[name]' } as={'/category/'+ item.EngName }   key={item.id}>
-                      <div className={'categoryItem'} >{item.name}</div>
+                      <div className={'categoryItem'} onClick={() => seeAll(1)}>{item.name}</div>
                     </Link>
                   )
                 }
@@ -64,11 +65,17 @@ const Header = () => {
           </div>
         </nav>
         <div className='topTip' ></div>
+        </div>
         <style jsx global>
           {`
             body {
               margin: 0;
               background: #FEF5DD;
+            }
+            .headerWrap {
+              position: fixed;
+              width: 100%;
+              top: 0;
             }
             .categoryNav {
               background: #CDF564;
@@ -85,6 +92,10 @@ const Header = () => {
               float: right;
             }
             @media (max-width: 680px) {
+            .headerWrap {
+              position: fixed;
+              width: 100%
+            }
                 ul {
                   display:flex;
                   flex-direction: row;
