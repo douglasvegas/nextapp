@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import fetch  from 'isomorphic-unfetch';
-import Link from 'next/link'
-import Layout from '../../components/layout'
-import Header from "../../components/header"
+import Link from 'next/link';
+import Layout from '../../components/layout';
+import Header from '../../components/header';
 
-const Cowsay = ({json}) => {
+const Posts = ({json}) => {
     return (
         <Layout>
             <Header />
@@ -101,15 +101,14 @@ const Cowsay = ({json}) => {
             </style>
         </Layout>
     )
-}
+};
 
-Cowsay.getInitialProps = async ({req}) => {
+Posts.getInitialProps = async ({req}) => {
     let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
-    url += "?PageSize=15";
+    url += '?PageSize=15';
     const res = await fetch(url);
     const json = await res.json();
     return {json: json.response};
-}
+};
 
-
-export default Cowsay
+export default Posts;

@@ -1,5 +1,4 @@
-import React, { Component } from "react"
-
+import React, { Component } from 'react';
 
 export default class Footer extends Component {
   componentDidMount () {
@@ -14,25 +13,24 @@ export default class Footer extends Component {
         </div>
         <style jsx>
           {`
-                  .wrap {
-                    background:none;
-                    width:100%;
-                    height: 20px;
-                    line-height:20px;
-                    text-align:center;
-                    position: relative;
-                    margin-bottom: 20px;
-                  }
-                  a {
-                    color: #24292e;
-                    text-decoration: none;
-                    font-size:12px;
-                    margin: 0 auto;
-                  }
-                `}
+            .wrap {
+              background:none;
+              width:100%;
+              height: 20px;
+              line-height:20px;
+              text-align:center;
+              position: relative;
+              margin-bottom: 20px;
+            }
+            a {
+              color: #24292e;
+              text-decoration: none;
+              font-size:12px;
+              margin: 0 auto;
+            }
+        `}
         </style>
       </div>
-
     )
   }
 }

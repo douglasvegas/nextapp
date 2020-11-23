@@ -12,7 +12,6 @@ const Home = ({ jsonList}) => {
       <div className="bd">
         <div className={"mainPage"}>
           <Header />
-
           <div className={'list'}>
             {
               jsonList && jsonList.map(item => {
@@ -226,7 +225,7 @@ const Home = ({ jsonList}) => {
         `}
       </style>
     </Layout>
-    )}
+    )};
 
 export default Home
 
