@@ -6,12 +6,12 @@ import NProgress from 'nprogress'
 import Head from "next/head";
 
 
-// Router.events.on('routeChangeStart', url => {
-//     console.log(`Loading: ${url}`)
-//     NProgress.start()
-// })
-// Router.events.on('routeChangeComplete', () => NProgress.done())
-// Router.events.on('routeChangeError', () => NProgress.done())
+Router.events.on('routeChangeStart', url => {
+    console.log(`Loading: ${url}`)
+    NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 export default class Layout extends Component {
     componentDidMount () {
