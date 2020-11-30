@@ -1,0 +1,39 @@
+.contentWrap {
+    margin-top: 80px;
+    margin-left: 5%;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    background-color: rgb(255, 232, 191);
+    /*border: 1px solid #e3eaef;*/
+    /*-webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);*/
+    /*box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);*/
+}
+
+.title {
+    text-align:center;
+    font-size: 24px;
+    color:#0c0c0c;
+    font-weight:500;
+    margin-bottom: 50px;
+    word-break: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Segoe UI', 'Helvetica Neue', 'PingFang SC', 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif;
+}
+
+
+.content {
+    font-weight:400;
+    font-size:16px;
+    padding:0 6%;
+    color:#333;
+}
+
+.contactMe {
+    text-align:center;
+}
+
+.contactMe span{
+    font-size: 20px;
+    color: #999;
+}

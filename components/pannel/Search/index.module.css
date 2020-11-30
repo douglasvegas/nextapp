@@ -1,0 +1,36 @@
+.outerWrap {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.searchWrap {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.searchInput {
+    font-size: 24px;
+    font-weight: lighter;
+    width: 60%;
+    height: 35px;
+    outline: none;
+}
+
+.searchButton {
+    height: 35px;
+    width: 20%;
+    background: #cdf563;
+    display: inline-block;
+    color: #F037A5;
+    font-size: 22px;
+    border: 1px solid #f038a5;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-left: 25px;
+    cursor: pointer;
+}

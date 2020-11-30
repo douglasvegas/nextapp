@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background: #FEF5DD;
+}
+::selection {
+    background: #F037A5;
+    color: #CDF564;
+}
+
+.fr {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.mainPage {
+    padding-bottom: 30px;
+    /*display: flex;*/
+}
+
+/**
+分页
+ */
+.noData {
+    textalign: center;
+    padding: 20px;
+}
+
+.paginator {
+    display: flex;
+    justifycontent: center;
+    height: 50px;
+    line-height: 50px;
+}
+.paginator span {
+    flex: 1;
+    textalign: center;
+    fontweight: 800;
+    cursor: pointer;
+}
+.paginator .prev {
+    background: #F037A5;
+}
+.paginator .next {
+    background: #CDF564;
+}
+
+

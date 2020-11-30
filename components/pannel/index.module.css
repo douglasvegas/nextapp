@@ -1,0 +1,34 @@
+.rightPannel {
+    float: right;
+    margin-right: 5%;
+    width: 40%;
+    /*background: #ccc;*/
+    margin-top: 80px;
+
+}
+
+.pannelSection {
+    margin-left: 10%;
+    width: 90%;
+    /*min-height: 200px;*/
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #FFF;
+    margin-bottom: 30px;
+}
+
+.header {
+    height: 40px;
+    line-height: 40px;
+    background-color: #f038a5;
+    font-size: 16px;
+    padding-left: 25px;
+    color: #FFF;
+    /*font-weight: bolder;*/
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+
+

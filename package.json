@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "babel-types": "^6.26.0",
+    "classnames": "^2.2.6",
     "cowsay-browser": "^1.1.8",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^10.0.2",

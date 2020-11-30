@@ -1,0 +1,50 @@
+.headerWrap {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.categoryNav {
+    background: #CDF564;
+    position: relative;
+}
+
+.homesvg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 40px;
+    top: 2px;
+}
+.topTip {
+    border-width: 5px 0 0;
+    border-top-style: solid;
+    -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+    border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+}
+.closeBtn {
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    text-align: right;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.categoryItem {
+    padding: 10px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 10px;
+    background: #F037A5;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.categoryItem:hover {
+    color: white;
+    font-weight: 600;
+}

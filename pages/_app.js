@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import MenuContext from "../components/MenuContext";
-
+import './_app.css'
 class MyApp extends App {
   state = {
     json: null
@@ -15,6 +15,7 @@ class MyApp extends App {
       json: json.response
     });
   }
+
 
   render() {
     const { Component, pageProps } = this.props;

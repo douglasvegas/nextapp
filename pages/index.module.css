@@ -1,0 +1,27 @@
+.bd {
+    /*padding-top: 30px;*/
+    background: #00BCD4;
+}
+
+
+/*@media (max-width: 680px) {*/
+/*    .list {*/
+/*        width:100%;*/
+/*        margin-left:0;*/
+/*        margin-top:0;*/
+/*        border-radius:0px;*/
+/*        box-shadow: none !important;*/
+/*    }*/
+/*    .allCategories {*/
+/*        width: 100%;*/
+/*        left: 0;*/
+/*        top: 50px;*/
+/*        padding: 0px;*/
+/*        border-radius: 0px;*/
+/*        padding-bottom: 50px;*/
+/*    }*/
+/*    .mainPage {*/
+/*        margin-top: 50px;*/
+/*        padding: 0;*/
+/*    }*/
+/*}*/
