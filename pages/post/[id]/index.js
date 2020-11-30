@@ -30,7 +30,7 @@ const Post = ({json}) => {
                     <p className = { styles.title }>
                         <span>{json.title}</span>
                     </p>
-                    <div className = {styles.content} dangerouslySetInnerHTML={{__html: json.content}}></div>
+                    <div className = {`${styles.content} content`} dangerouslySetInnerHTML={{__html: json.content}}></div>
                     <div className = {styles.contactMe}>
                         <span>📧Email：sunstar1227@163.com</span>
                     </div>
@@ -43,6 +43,7 @@ const Post = ({json}) => {
                   .content img {
                         border-radius: 8px;
                         height: auto;
+                        width: 100% !important;
                    }
                 `}
             </style>
