@@ -48,3 +48,40 @@ body {
 }
 
 
+
+/**
+分页器
+ */
+
+.pagination {
+    display: flex;
+    list-style: none;
+    height: 40px;
+    border-radius: 5px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+    padding: 0;
+}
+
+.pagination li a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.pagination li a:hover {
+    font-weight: bolder;
+}
+
+.pagination li.active a {
+    font-size: 24px;
+    font-weight: bolder;
+    pointer-events: none;
+}
+
+

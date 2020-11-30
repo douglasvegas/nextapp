@@ -1,45 +1,30 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import styles from './index.module.css';
-import { getCate } from '../../../service/index';
+import MenuContext from '../../MenuContext';
 
-export default class Itemize extends Component{
-  constructor() {
-    super();
-    this.state = {
-      response: []
-    }
-  }
+const Itemize = () => {
+  const {categories} = useContext(MenuContext);
 
-  async componentDidMount() {
-    let json = await getCate();
-    let { response } = json;
-    this.setState({
-      response
-    });
-  }
-
-  handleClick(url) {
+  let handleClick = (url) => {
     window.location.href = `/category/${url}`;
-  }
+  };
 
-  render() {
-    let response = this.state.response;
-    return (
+  return (
       <div className={styles.itemizeWrap}>
         {
-          (response && (response.length > 0)) && response.map(res => {
+          (categories && (categories.length > 0)) && categories.map(res => {
             return (
               <span
                 key={res.EngName}
-                className={styles.item} onClick={() => this.handleClick(res.EngName)}>
+                className={styles.item} onClick={() => handleClick(res.EngName)}>
                 { res.name }
               </span>
             )
           })
         }
       </div>
-    );
-  }
-}
+  );
+};
 
+export default Itemize;
 

@@ -6,7 +6,7 @@ import Head from 'next/head';
 import styles from './index.module.css';
 
 const Header = () => {
-  const {json} = useContext(MenuContext);
+  const {categories} = useContext(MenuContext);
   function seeAll(flag) {
     if (flag == 0) {
       console.log('show');
@@ -35,7 +35,7 @@ const Header = () => {
 
           <ul>
             {
-              (json&& json.length>0) && json.map(item => {
+              (categories&& categories.length>0) && categories.map(item => {
                 if (item.StateFlag == 3) {
                   return (
                     <Link href={'/category/[name]' } as={'/category/'+ item.EngName} key={item.id}>
@@ -47,14 +47,14 @@ const Header = () => {
               })
             }
             {
-              (json&& json.length>0) ?
+              (categories&& categories.length>0) ?
                 <li key={'all'} className={styles.seeAll} onClick={() => seeAll(0)} onMouseEnter={() => seeAll(0)} >{'其他'}</li>
                 : null
             }
           </ul>
           <div className={'allCategories'} onMouseLeave={() => seeAll(1)}>
             {
-              (json&& json.length>0) && json.map( item => {
+              (categories&& categories.length>0) && categories.map( item => {
                 if (item.StateFlag == 2) {
                   return (
                     <Link href={'/category/[name]' } as={'/category/'+ item.EngName }   key={item.id}>

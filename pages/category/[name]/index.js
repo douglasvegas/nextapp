@@ -27,16 +27,16 @@ export default Category;
 Category.getInitialProps = async (ctx) => {
   let {req, query} = ctx;
   let categoryEngName = query.name;
+  let PageIndex = query.p || 0;
   let PageSize = 20;
   let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
-  url += '?PageSize=' + PageSize + '&CategoryName=' + categoryEngName;
+  url += '?PageSize=' + PageSize + '&CategoryName=' + categoryEngName + '&PageIndex=' + PageIndex ;
   const res = await fetch(url);
   const json = await res.json();
   let pageTotal = Math.ceil(json.totalSize / PageSize);
 
   let lists = json.response; // 列表信息
-  let pageInfo = {PageSize, pageTotal, categoryEngName}; // 分页信息
-
+  let pageInfo = {PageSize, PageIndex, pageTotal, categoryEngName}; // 分页信息
   return {
     lists,
     pageInfo

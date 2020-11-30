@@ -1,74 +1,26 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import commonListStyles from './index.module.css';
-import fetch from "isomorphic-unfetch";
+import ReactPaginate from 'react-paginate';
 
 const CommonList = (props) => {
   const router = useRouter();
-  const [lists, setLists] = useState(props.lists);
+  let lists = props.lists;
 
-  let needPaginator = false;
-  let pInfo = {
-    'PageSize': -1,
-    'pageTotal': -1,
-    'categoryEngName': ''
+  /***
+   * 分页
+   */
+  const pagginationHandler = (page) => {
+    const path = router.pathname;
+    const query = router.query;
+    query.p = page.selected;
+
+    router.push({
+      pathname: path,
+      query: query,
+    })
   };
-  // 需分页
-  if (props.pageInfo) {
-    pInfo = props.pageInfo;
-    needPaginator = true; //需要分页
-  }
-  const [PageSize, setPageSize] = useState(pInfo.PageSize);
-  const [pageTotal, setpageTotal] = useState(pInfo.pageTotal);
-  const [categoryEngName, setCategoryEngName] = useState(pInfo.categoryEngName);
-  const [initPageIndex, setInitPageIndex] = useState(0);
-
-
-  useEffect(() => {
-    if(needPaginator) {
-      getPosts();
-      const handleRouteChange = (url) => {
-        if(url.indexOf('category') != -1) {
-          let categoryEngName = url.replace('/category/','');
-          setCategoryEngName(categoryEngName);
-          setInitPageIndex(0);
-        }
-      };
-
-      router.events.on('routeChangeStart', handleRouteChange);
-
-      // If the component is unmounted, unsubscribe
-      // from the event with the `off` method:
-      return () => {
-        router.events.off('routeChangeStart', handleRouteChange);
-      }
-    }
-  }, [categoryEngName]);
-
-  useEffect(() => {
-    if(needPaginator) {
-      getPosts();
-    }
-  }, [initPageIndex]);
-
-  // 分页点击
-  const getPage = (flag) => {
-    setInitPageIndex(Number(initPageIndex) + Number(flag));
-  };
-
-
-  // 获取列表
-  const getPosts = async () => {
-    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
-    url += '?PageSize=' + PageSize + '&PageIndex=' + initPageIndex + '&CategoryName=' + categoryEngName;
-    const res = await fetch(url);
-    const json = await res.json();
-    let pageTotal = Math.ceil(json.totalSize / PageSize);
-    setpageTotal(pageTotal);
-    setLists(json.response);
-  };
-
 
   return (
     <div className = {commonListStyles.list }>
@@ -90,19 +42,22 @@ const CommonList = (props) => {
           })
       }
       {
-        lists.length > 0 ?
-          <div className={'paginator'}>
-            {
-              initPageIndex > 0 ?
-                <span className={'prev center'} onClick={() => {getPage(-1)}}>上一页</span>
-                :null
-            }
-            {
-              initPageIndex <= pageTotal - 2  ?
-                <span className={'next center'} onClick={() => {getPage(1)}}>下一页</span>
-                :null
-            }
-          </div>
+        props.pageInfo ?
+          <ReactPaginate
+            previousLabel={'previous'}
+            nextLabel={'next'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            activeClassName={'active'}
+            containerClassName={'pagination'}
+            subContainerClassName={'pages pagination'}
+
+            initialPage={props.pageInfo.PageIndex}
+            pageCount={props.pageInfo.pageTotal} //page count
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={pagginationHandler}
+          />
           :null
       }
     </div>

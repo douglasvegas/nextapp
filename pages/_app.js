@@ -4,7 +4,7 @@ import MenuContext from "../components/MenuContext";
 import './_app.css'
 class MyApp extends App {
   state = {
-    json: null
+    categories: null
   };
 
   async componentDidMount() {
@@ -12,7 +12,7 @@ class MyApp extends App {
     const res = await fetch(url);
     const json = await res.json();
     this.setState({
-      json: json.response
+      categories: json.response
     });
   }
 
@@ -21,7 +21,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-        <MenuContext.Provider value={{json: this.state.json}}>
+        <MenuContext.Provider value={{categories: this.state.categories}}>
           <Component {...pageProps} />
         </MenuContext.Provider>
       )
