@@ -14,6 +14,16 @@ class MyApp extends App {
     this.setState({
       categories: json.response
     });
+    if (document.hidden !== undefined) {
+      document.addEventListener('visibilitychange', (a) => {
+        if(document.hidden) {
+          document.title = 'pornhub影片播放中【18禁】'
+
+        } else {
+          document.title = '贤者模式'
+        }
+      })
+    }
   }
 
   handleClick() {
