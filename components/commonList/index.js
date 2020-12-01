@@ -42,7 +42,7 @@ const CommonList = (props) => {
           })
       }
       {
-        props.pageInfo ?
+        (props.pageInfo && lists.length > 0)?
           <ReactPaginate
             previousLabel={'previous'}
             nextLabel={'next'}

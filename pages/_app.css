@@ -20,6 +20,21 @@ body {
     /*display: flex;*/
 }
 
+.toTop {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background: antiquewhite;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+.toTop:hover {
+    font-weight: bolder;
+}
+
 /**
 分页
  */

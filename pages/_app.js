@@ -16,6 +16,10 @@ class MyApp extends App {
     });
   }
 
+  handleClick() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 
   render() {
     const { Component, pageProps } = this.props;
@@ -23,6 +27,9 @@ class MyApp extends App {
     return (
         <MenuContext.Provider value={{categories: this.state.categories}}>
           <Component {...pageProps} />
+          <div className={'toTop'}
+            onClick={this.handleClick.bind(this)}
+          >Top</div>
         </MenuContext.Provider>
       )
 
