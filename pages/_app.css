@@ -35,6 +35,13 @@ body {
     font-weight: bolder;
 }
 
+/***
+导航icon
+ */
+.pannelIcon {
+    margin-right: 6px;
+    width: 26px;
+}
 /**
 分页
  */

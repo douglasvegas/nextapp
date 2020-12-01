@@ -1,13 +1,20 @@
 import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
-import React from 'react';
+import React, { useState } from 'react';
+
 import Layout from '../../../components/layout';
 import Head from 'next/head';
 import Header from '../../../components/header/index';
 import styles from './post.module.css';
 import Pannel from '../../../components/pannel/index';
+let classNames = require('classnames')
 
 const Post = ({json}) => {
+    const [isFullScreeen, setFullScreen] = useState(false);
+
+    const handleFullScreen = (flag) => {
+        setFullScreen(flag)
+    };
 
     const router = useRouter();
     const {id} = router.query;
@@ -26,7 +33,20 @@ const Post = ({json}) => {
         <div>
             <Header />
             <div className = {'mainPage'} >
-                <div className = { styles.contentWrap}>
+                <div className = {classNames(styles.contentWrap, {'full': isFullScreeen})} >
+                    {
+                        !isFullScreeen ?
+                          <img src="/icons/fullscreen.svg" alt=""
+                               className={styles.fullScreen}
+                               onClick={() => handleFullScreen(true)}
+                          />
+                          :
+                          <img src="/icons/cancelFullscreen.svg" alt=""
+                               className={styles.fullScreen}
+                               onClick={() => handleFullScreen(false)}
+                          />
+
+                    }
                     <p className = { styles.title }>
                         <span>{json.title}</span>
                     </p>
@@ -44,6 +64,9 @@ const Post = ({json}) => {
                         border-radius: 8px;
                         height: auto;
                         width: 100% !important;
+                   }
+                   .full {
+                    width: 90%
                    }
                 `}
             </style>

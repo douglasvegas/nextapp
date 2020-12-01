@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import fetch  from 'isomorphic-unfetch';
 import Layout from '../../../components/layout';
 import Header from '../../../components/header/index';
 import Pannel from '../../../components/pannel/index';
 import CommonList from "../../../components/commonList";
+
 
 const Category = ({lists, pageInfo}) => {
 

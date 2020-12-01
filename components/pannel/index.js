@@ -17,7 +17,9 @@ export default class Pannel extends Component{
 
         <div className = {`${styles.pannelSection} ${styles.announcementSection}`}>
           <div className={styles.header}>
-            公告
+            <img src='/icons/announcement.svg'
+                 className = 'pannelIcon' />
+                 <span>公告</span>
           </div>
           <Announcement />
         </div>
@@ -30,14 +32,18 @@ export default class Pannel extends Component{
 
         <div className = {`${styles.pannelSection} ${styles.searchSection}`}>
           <div className={styles.header}>
-            搜索
+            <img src='/icons/search.svg'
+                 className = 'pannelIcon' />
+            <span>搜索</span>
           </div>
           <Search />
         </div>
 
         <div className={`${styles.pannelSection} ${styles.itemizeSection}`}>
           <div className={styles.header}>
-            分类
+            <img src='/icons/itemize.svg'
+                 className = 'pannelIcon' />
+            <span>分类</span>
           </div>
           <Itemize />
         </div>
@@ -53,7 +59,9 @@ export default class Pannel extends Component{
         {/*</div>*/}
         <div className={`${styles.pannelSection} ${styles.collentionSection}`}>
           <div className={styles.header}>
-            收藏
+            <img src='/icons/collection.svg'
+                 className = 'pannelIcon' />
+            <span>收藏</span>
           </div>
           <Collection />
         </div>

@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import commonListStyles from './index.module.css';
 import ReactPaginate from 'react-paginate';
 
 const CommonList = (props) => {
   const router = useRouter();
   let lists = props.lists;
+
+  const stopLoading = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
+  useEffect(() => {
+    Router.events.on('routeChangeComplete', stopLoading);
+
+    return () => {
+      Router.events.off('routeChangeComplete', stopLoading);
+    }
+  }, [])
 
   /***
    * 分页
