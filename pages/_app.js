@@ -2,6 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import MenuContext from "../components/MenuContext";
 import './_app.css'
+import Router from "next/router";
+import * as gtag from '../lib/gtag'
+
 class MyApp extends App {
   state = {
     categories: null
@@ -24,6 +27,11 @@ class MyApp extends App {
         }
       })
     }
+
+    Router.events.on('routeChangeComplete', (url) => {
+      gtag.pageview(url);
+    });
+
   }
 
   handleClick() {
