@@ -14,7 +14,7 @@ const CommonList = (props) => {
   const pagginationHandler = (page) => {
     const path = router.pathname;
     const query = router.query;
-    query.p = page.selected;
+    query.p = page.selected + 1;
 
     router.push({
       pathname: path,
@@ -52,7 +52,7 @@ const CommonList = (props) => {
             containerClassName={'pagination'}
             subContainerClassName={'pages pagination'}
 
-            initialPage={props.pageInfo.PageIndex}
+            initialPage={Number(props.pageInfo.PageIndex) -1}
             pageCount={props.pageInfo.pageTotal} //page count
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}

@@ -27,10 +27,10 @@ export default Category;
 Category.getInitialProps = async (ctx) => {
   let {req, query} = ctx;
   let categoryEngName = query.name;
-  let PageIndex = query.p || 0;
+  let PageIndex = query.p >= 1 ? query.p : 1;
   let PageSize = 20;
   let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
-  url += '?PageSize=' + PageSize + '&CategoryName=' + categoryEngName + '&PageIndex=' + PageIndex ;
+  url += '?PageSize=' + PageSize + '&CategoryName=' + categoryEngName + '&PageIndex=' + Number(PageIndex -1);
   const res = await fetch(url);
   const json = await res.json();
   let pageTotal = Math.ceil(json.totalSize / PageSize);
