@@ -22,7 +22,7 @@ const Header = () => {
         <Head>
           <meta name='viewport' content='width=device-width, initial-scale=1.0' />
           <title>Think before you speak. Read before you think.｜Jarvis Sun</title>
-          <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+          <link rel='icon' href='/favicon.svg' type='image/x-icon' />
         </Head>
         {/*<Head>*/}
         {/*  <script data-ad-client='ca-pub-9856877633666184' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>*/}
@@ -83,6 +83,7 @@ const Header = () => {
               width: 50%;
               padding: 10px 0;
               margin-left: 25%;
+              font-family: Helvetica Neue,Helvetica,Arial,Microsoft YaHei,STHeiti,sans-serif;
             }
             ul li {
               list-style: none;
