@@ -13,7 +13,12 @@ const Post = ({json}) => {
     const [isFullScreeen, setFullScreen] = useState(false);
 
     const handleFullScreen = (flag) => {
-        setFullScreen(flag)
+        if(flag) {
+            document.querySelector('#rightPannel').style.display = 'none';
+        } else {
+            document.querySelector('#rightPannel').style.display = 'block';
+        }
+        setFullScreen(flag);
     };
 
     const router = useRouter();

@@ -13,7 +13,7 @@ export default class Pannel extends Component{
 
   render() {
     return (
-      <div className={ styles.rightPannel}>
+      <div className={ styles.rightPannel} id={'rightPannel'}>
 
         <div className = {`${styles.pannelSection} ${styles.announcementSection}`}>
           <div className={styles.header}>
