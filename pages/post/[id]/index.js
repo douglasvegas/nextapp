@@ -52,7 +52,7 @@ const Post = ({json}) => {
                     </p>
                     <div className = {`${styles.content} content`} dangerouslySetInnerHTML={{__html: json.content}}></div>
                     <div className = {styles.contactMe}>
-                        <span>📧Email：sunstar1227@163.com</span>
+                        <span>📧 Email：sunstar1227@163.com</span>
                     </div>
                 </div>
                 <Pannel />
@@ -64,6 +64,7 @@ const Post = ({json}) => {
                         border-radius: 8px;
                         height: auto;
                         width: 100% !important;
+                        margin: 10px 0 !important;
                    }
                    .full {
                     width: 90%
