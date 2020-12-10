@@ -211,6 +211,7 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
             footer {
               color: #999;
               font-size: 12px;
+              margin: 16px 0;
             }
             
             footer a {
@@ -239,7 +240,7 @@ Blog.getInitialProps = async ({req, query}) => {
   if(cate) {
     postsUrl = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'blog/category/' + cate;
   }
-  let PageSize = 1;
+  let PageSize = 20;
   let PageIndex = query.p >= 1 ? query.p : 1;
   postsUrl  = postsUrl + '?PageSize=' + PageSize  + '&PageIndex=' + Number(PageIndex - 1);
   const postsRes = await fetch(postsUrl);

@@ -169,6 +169,7 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
             footer {
               color: #999;
               font-size: 12px;
+              margin: 16px 0;
             }
             
             footer span {
