@@ -1,9 +1,9 @@
-import React, { useState, useEffect }  from 'react';
+import React from 'react';
 
 import styles from '../index.module.css'
 import fetch from "isomorphic-unfetch";
-import Blog from "../index";
 import Router, {useRouter} from "next/router";
+import Layout from '../../../components/layout'
 
 const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
   if(!postJson) {
@@ -40,6 +40,7 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
   };
 
   return (
+    <Layout>
 
     <div className={styles.blogWrap}>
       <div className={styles.blog}>
@@ -180,6 +181,8 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
       `}
       </style>
     </div>
+
+    </Layout>
   )
 };
 

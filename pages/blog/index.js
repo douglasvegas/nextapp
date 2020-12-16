@@ -4,7 +4,7 @@ import fetch from "isomorphic-unfetch";
 import BlogDetail from "./[id]";
 import Router, {useRouter} from "next/router";
 import ReactPaginate from 'react-paginate';
-
+import Layout from '../../components/layout'
 
 const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
   const router = useRouter();
@@ -62,6 +62,8 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
   };
 
   return (
+    <Layout>
+
     <div className={styles.blogWrap}>
       <div className={styles.blog}>
         <div className={styles.leftSide}>
@@ -228,6 +230,7 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
       </style>
     </div>
 
+    </Layout>
   )
 };
 
