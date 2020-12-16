@@ -85,7 +85,7 @@ export default Post;
 
 Post.getInitialProps = async ({req, query}) => {
     let id = query.id;
-    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts/'+id;
+    let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'post/guid/'+id;
     const res = await fetch(url);
     const json = await res.json();
     return {json: json.response};

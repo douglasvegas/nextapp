@@ -43,7 +43,7 @@ const CommonList = (props) => {
           lists && lists.map(item => {
             return (
               <div key={item.id} className={commonListStyles.postItem} >
-                <Link href={'/post/[id]'} as={'/post/' + item.id}>
+                <Link href={'/post/[id]'} as={'/post/' + item.Guid}>
                   <p className={commonListStyles.title}
                   >{item.title}</p>
                 </Link>

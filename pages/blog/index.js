@@ -98,7 +98,7 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
                   return (
                     <li key={item.ID}
                         className={styles.title}
-                        onClick={() => jumpPostUrl(item.ID)}
+                        onClick={() => jumpPostUrl(item.Guid)}
                     >
                       {item.Title}
                     </li>
@@ -123,7 +123,7 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
                 <header>
                   <h2
                     className={styles.title}
-                    onClick={() => jumpPostUrl(post.id)}
+                    onClick={() => jumpPostUrl(post.Guid)}
                   >
                     {post.title}
                   </h2>

@@ -77,7 +77,7 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
                   return (
                     <li key={item.ID}
                         className={styles.title}
-                        onClick={() => jumpPostUrl(item.ID)}
+                        onClick={() => jumpPostUrl(item.Guid)}
                     >
                       {item.Title}
                     </li>
@@ -188,7 +188,7 @@ export default BlogDetail;
 BlogDetail.getInitialProps = async ({req, query}) => {
 
   let id = query.id;
-  let postUrl = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts/'+id;
+  let postUrl = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'post/guid/'+id;
   const postRes = await fetch(postUrl);
   const postJson = await postRes.json();
 
