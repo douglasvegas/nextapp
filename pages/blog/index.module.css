@@ -23,7 +23,7 @@
     flex-basis: 180px;
     flex-grow: 1;
     flex-shrink: 1;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 
 .rightSide {
@@ -32,7 +32,7 @@
     flex-shrink: 3;
     margin-left: 20px;
     overflow-x: hidden;
-    margin-top: 38px;
+    /*margin-top: 38px;*/
 }
 
 .avatar {

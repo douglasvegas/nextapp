@@ -143,7 +143,7 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
             
             header h2 {
               font-size: 22px;
-              margin: 20px 0;
+              margin: 0 0 20px 0;
             }
             
             .content {
