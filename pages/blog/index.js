@@ -1,7 +1,6 @@
-import React, { useState, useEffect }  from 'react';
+import React, {  useEffect }  from 'react';
 import styles from './index.module.css'
 import fetch from "isomorphic-unfetch";
-import BlogDetail from "./[id]";
 import Router, {useRouter} from "next/router";
 import ReactPaginate from 'react-paginate';
 import Layout from '../../components/layout'
@@ -243,7 +242,7 @@ Blog.getInitialProps = async ({req, query}) => {
   if(cate) {
     postsUrl = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'blog/category/' + cate;
   }
-  let PageSize = 20;
+  let PageSize = 6;
   let PageIndex = query.p >= 1 ? query.p : 1;
   postsUrl  = postsUrl + '?PageSize=' + PageSize  + '&PageIndex=' + Number(PageIndex - 1);
   const postsRes = await fetch(postsUrl);

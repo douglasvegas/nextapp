@@ -1,8 +1,7 @@
 import React from 'react';
-
 import styles from '../index.module.css'
 import fetch from "isomorphic-unfetch";
-import Router, {useRouter} from "next/router";
+import {useRouter} from "next/router";
 import Layout from '../../../components/layout'
 
 const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
@@ -22,8 +21,6 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
   const jumpUrl = (EngName) => {
     const path = '/blog';
 
-    const query = router.query;
-    // query.cate = EngName;
     router.push({
       pathname: path,
       query: {
