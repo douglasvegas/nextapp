@@ -15,6 +15,10 @@ module.exports = {
     {
       name: 'go中文网',
       url :'https://studygolang.com/'
+    },
+    {
+      name: 'Andy小站',
+      url :'https://hi-andy.com/'
     }
   ]
 };
