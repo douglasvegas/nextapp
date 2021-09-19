@@ -30,7 +30,8 @@ const Header = () => {
         <div className={styles.headerWrap}>
         <nav className={styles.categoryNav}>
           <Link href={'/' } as={'/'} key={'icon'}>
-            <img src='/aiglabhome.svg' alt='' with='100px' height='100px' className={styles.homesvg} />
+            {/* <img src='/aiglabhome.svg' alt='' with='100px' height='auto' className={styles.homesvg} /> */}
+            <img src='/aiglab.png' alt='' with='100px' height='auto' className={styles.homesvg} />
           </Link>
 
           <ul>
