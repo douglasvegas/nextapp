@@ -31,7 +31,7 @@ const Header = () => {
         <nav className={styles.categoryNav}>
           <Link href={'/' } as={'/'} key={'icon'}>
             {/* <img src='/aiglabhome.svg' alt='' with='100px' height='auto' className={styles.homesvg} /> */}
-            <img src='/aiglab.png' alt='' with='100px' height='auto' className={styles.homesvg} />
+            <img src='/aiglab.png' alt='' className={styles.homesvg} />
           </Link>
 
           <ul>

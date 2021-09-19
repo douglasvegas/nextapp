@@ -12,10 +12,8 @@
 
 .homesvg {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 40px;
-    top: 2px;
+    width: 60px;
+    left: 20px;
 }
 .topTip {
     border-width: 5px 0 0;
