@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="343px" height="172px" viewBox="0 0 343 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(0.942942, 0.501999)">
+            <rect id="矩形" fill="#FFC600" x="6.05705831" y="32.4980006" width="327" height="100"></rect>
+            <rect id="矩形" fill-opacity="0.85" fill="#000000" transform="translate(170.557058, 85.498001) rotate(-13.000000) translate(-170.557058, -85.498001) " x="7.05705831" y="35.4980006" width="327" height="100"></rect>
+            <text id="AigLab" font-family="Impact" font-size="61" font-style="condensed" font-weight="700" line-spacing="100" letter-spacing="3.7" fill="#FFFFFF">
+                <tspan x="96.0570583" y="94.4980006">AigLab</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
