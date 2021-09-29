@@ -8,11 +8,11 @@ import Theysay from '../../components/indexSection/whattheysay';
 import Goodsites from '../../components/indexSection/goodsites';
 import Indexes from '../../components/indexSection/someindexes';
 
-import Sidebar from '../../components/sidebar';
 import Head from '../../components/head';
 import Foot from '../../components/foot';
 import Totop from '../../components/totop';
 import Bg from '../../components/bg';
+import Sidebar from '../../components/sidebar';
 
 
 import styles from './index.module.css';
