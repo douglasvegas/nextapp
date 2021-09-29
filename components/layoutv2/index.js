@@ -5,7 +5,7 @@ import Head from 'next/head';
 // import { initGA, logPageView } from './ga.js';
 // import fetch from 'isomorphic-unfetch';
 
-import Sidebar from '../sidebar';
+// import Sidebar from '../sidebar';
 import HeadCustom from '../head';
 import FootCustom from '../foot';
 import Totop from '../totop';
@@ -45,7 +45,7 @@ export default class Layout extends Component {
                     <FootCustom />
                 </div>
                 </div>
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <Totop />
                 
             </div>
