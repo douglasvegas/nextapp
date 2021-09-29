@@ -5,7 +5,7 @@ import Head from 'next/head';
 // import { initGA, logPageView } from './ga.js';
 // import fetch from 'isomorphic-unfetch';
 
-import Sidebar from '../sidebar';
+import Sidebar from '../sideBar';
 import HeadCustom from '../head';
 import FootCustom from '../foot';
 import Totop from '../totop';

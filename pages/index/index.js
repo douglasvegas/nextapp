@@ -12,7 +12,7 @@ import Head from '../../components/head';
 import Foot from '../../components/foot';
 import Totop from '../../components/totop';
 import Bg from '../../components/bg';
-import Sidebar from '../../components/sidebar/index.js';
+import Sidebar from '../../components/sideBar';
 
 
 import styles from './index.module.css';
