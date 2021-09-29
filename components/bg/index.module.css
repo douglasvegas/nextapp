@@ -1,0 +1,15 @@
+.bgBlue {
+    background-position: calc(50% + -0.892226px) calc(50% + 3.35551px);
+    position: fixed;
+    width: auto;
+    height: auto;
+    top: -18px;
+    left: -18px;
+    right: -18px;
+    bottom: -18px;
+    background-image: url(https://lmpixels.com/wp/leven-wp/wp-content/uploads/2019/12/main_bg_14.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }

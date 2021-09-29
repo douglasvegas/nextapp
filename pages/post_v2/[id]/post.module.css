@@ -1,0 +1,26 @@
+.contentWrap {
+    margin-top: 80px;
+    display: inline-block;
+    width: 50%;
+    position: relative;
+}
+
+.title {
+    text-align: left;
+    font-size: 24px;
+    color:#0c0c0c;
+    font-weight:500;
+    margin-bottom: 50px;
+    word-break: break-word;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft YaHei,STHeiti,sans-serif;
+}
+
+
+.content {
+    font-weight:400;
+    font-size:16px;
+    color:#333;
+    line-height: 1.5em;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft YaHei,STHeiti,sans-serif;
+}
+

@@ -7,15 +7,29 @@ import * as gtag from '../lib/gtag'
 
 class MyApp extends App {
   state = {
-    categories: null
+    categories: null,
+    recentPosts: null
   };
 
   async componentDidMount() {
     let url = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'categories';
     const res = await fetch(url);
-    const json = await res.json();
+    let categoriesJson  = await res.json();
+    categoriesJson = categoriesJson.response;
+
+    let PageSize = 5;
+    let PageIndex = 1;
+    let urlList = process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL + 'posts';
+    urlList += '?PageSize=' + PageSize  + '&PageIndex=' + Number(PageIndex - 1);
+    let resList = await fetch(urlList);
+    let recentPostsJson = await resList.json(); // 列表信息
+    recentPostsJson = recentPostsJson.response; // 列表信息
+
+    console.log('recentPostsJson:',recentPostsJson);
+
     this.setState({
-      categories: json.response
+      recentPosts: recentPostsJson,
+      categories: categoriesJson,
     });
     // if (document.hidden !== undefined) {
     //   document.addEventListener('visibilitychange', (a) => {
@@ -27,30 +41,24 @@ class MyApp extends App {
     //     }
     //   })
     // }
-
     Router.events.on('routeChangeComplete', (url) => {
       gtag.pageview(url);
     });
-
-  }
-
-  handleClick() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
   }
 
   render() {
     const { Component, pageProps } = this.props;
-
     return (
-        <MenuContext.Provider value={{categories: this.state.categories}}>
+        <MenuContext.Provider 
+          value={
+            {
+              categories: this.state.categories,
+              recentPosts: this.state.recentPosts
+            }
+          }>
           <Component {...pageProps} />
-          <div className={'toTop'}
-            onClick={this.handleClick.bind(this)}
-          >Top</div>
         </MenuContext.Provider>
       )
-
   }
 }
 

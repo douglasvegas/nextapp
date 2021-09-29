@@ -24,7 +24,6 @@ const Home = (props) => {
         <Footer />
       <style jsx>
         {`
-          
           ul {
             display:flex;
             flex-direction: row;

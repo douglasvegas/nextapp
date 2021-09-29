@@ -1,24 +1,18 @@
 import React, { useState, useEffect }  from 'react';
 import fetch  from 'isomorphic-unfetch';
-import Layout from '../../../components/layout';
-// import Layout from '../../../components/layoutv2';
-import Header from '../../../components/header/index';
-import Pannel from '../../../components/pannel/index';
-import CommonList from "../../../components/commonList";
+// import Layout from '../../../components/layout';
+import Layout from '../../../components/layoutv2';
+import CommonList from "../../../components/commonList_v2";
 
 
 const Category = ({lists, pageInfo}) => {
 
   return (
     <Layout>
-        <Header />
-        <div className={'mainPage'}>
           <CommonList
             lists = {lists}
             pageInfo = {pageInfo}
           />
-          <Pannel />
-        </div>
     </Layout>
   )
 

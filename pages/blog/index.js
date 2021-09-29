@@ -164,7 +164,15 @@ const Blog = ({categoriesJson,recentJson,postsJson,pageInfo}) => {
           }
         </div>
       </div>
+      <style jsx global>
+        {`
+          body {
+            background-color: #fef5dd !important;
+          }
+        `}
+      </style>
       <style jsx>{`
+          
            .category {
               display: flex;
               flex-direction: column;

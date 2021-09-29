@@ -4,7 +4,7 @@ import MenuContext from '../../MenuContext';
 
 const Itemize = () => {
   const {categories} = useContext(MenuContext);
-
+  console.log('categories',categories)
   let handleClick = (url) => {
     window.location.href = `/category/${url}`;
   };

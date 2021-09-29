@@ -1,24 +1,16 @@
 import React  from 'react';
 import fetch  from 'isomorphic-unfetch';
-import Layout from '../../components/layout';
-import Header from '../../components/header/index';
-import Pannel from '../../components/pannel/index';
+import Layout from '../../components/layoutv2';
 import CommonList from "../../components/commonList_v2";
 
 const Search = (props) => {
-
   return (
     <Layout>
-      <Header />
-      <div className={'mainPage'}>
         <CommonList
           lists = {props.lists}
         />
-        <Pannel />
-      </div>
     </Layout>
   )
-
 };
 
 

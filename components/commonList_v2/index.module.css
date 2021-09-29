@@ -1,6 +1,6 @@
 .list {
     margin-top: 80px;
-    margin-left:5%;
+    /* margin-left:5%; */
     display: inline-block;
     width:50%;
     margin-bottom:20px;
@@ -12,7 +12,8 @@
 }
 
 .postItem {
-    border-bottom:1px solid #f3e674d1;
+    /* border-bottom:1px solid #f3e674d1; */
+    border-bottom:1px solid #e5e5e578;
     padding:10px;
 }
 .postItem::last {
