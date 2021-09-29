@@ -12,7 +12,7 @@ import Head from '../../components/head';
 import Foot from '../../components/foot';
 import Totop from '../../components/totop';
 import Bg from '../../components/bg';
-import Sidebar from '../../components/sidebar';
+// import Sidebar from '../../components/sidebar';
 
 
 import styles from './index.module.css';
@@ -33,7 +33,7 @@ const Index = (props) => {
                 <Foot />
               </div>
             </div>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Totop />
         </Layout>
     )};
