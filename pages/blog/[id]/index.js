@@ -111,6 +111,13 @@ const BlogDetail = ({categoriesJson,recentJson,postJson}) => {
           </footer>
         </div>
       </div>
+      <style jsx global>
+        {`
+          body {
+            background-color: #fef5dd !important;
+          }
+        `}
+      </style>
       <style jsx>{`
            .category {
               display: flex;
