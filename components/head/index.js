@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import styles from './index.module.css';
+import LevelUp from '../levelup'
 let classNames = require('classnames')
 
 
 const HeadCustom = (props) => {
+    
     return (
         <header>
             <div className = {styles.fl}>
-            <a href = '/index' className = {styles.imgWrapA}>
+            <a href = '/' className = {styles.imgWrapA}>
                 <img src='/logo.svg' alt='' className={styles.homesvg} />
             </a>
             </div>
@@ -30,7 +32,9 @@ const HeadCustom = (props) => {
                     </a>
                 </li>
                 <li>联系我</li>
-                <li>打赏</li>
+                <li
+                    onClick = {props.showLevelUp}
+                >打赏</li>
             </ul>
             </div>
         </header>

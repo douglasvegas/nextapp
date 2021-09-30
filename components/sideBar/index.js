@@ -6,8 +6,6 @@ import MenuContext from '../MenuContext';
 
 const Sidebar = (props) => {
     const {categories, recentPosts} = useContext(MenuContext);
-    console.log('categories',categories);
-    console.log('recentPosts',recentPosts);
     const [isVisible, setiIsVisible] = useState(false);
     const setVisible = () => {
       setiIsVisible(!isVisible)
