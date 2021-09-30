@@ -16,7 +16,7 @@ const HeadCustom = (props) => {
             <div className = {classNames(styles.nav, styles.fr)}>
             <ul>
                 <li>
-                    <a href='/index'>
+                    <a href='/'>
                     关于我
                     </a>
                 </li>
