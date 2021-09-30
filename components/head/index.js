@@ -20,7 +20,11 @@ const HeadCustom = (props) => {
                     关于我
                     </a>
                 </li>
-                <li>简历</li>
+                <li>
+                    <a href='/index'>
+                        简历
+                    </a>    
+                </li>
                 <li>
                     <a href='/blog'>
                     杂的谈
@@ -31,7 +35,11 @@ const HeadCustom = (props) => {
                     技术
                     </a>
                 </li>
-                <li>联系我</li>
+                <li>
+                    <a href='/index'>
+                        联系我
+                    </a> 
+                </li>
                 <li
                     onClick = {props.showLevelUp}
                 >打赏</li>
