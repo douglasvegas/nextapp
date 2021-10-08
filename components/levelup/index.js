@@ -6,7 +6,7 @@ let classNames = require('classnames')
 
 const LevelUp = (props) => {
     let isVisible = useContext(showLevelupContext)
-    console.log('isVisible:',isVisible)
+    // console.log('isVisible:',isVisible)
     if(isVisible) {
         return (
             <div className = {styles.levelup} onClick = {props.showLevelUp}>

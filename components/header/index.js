@@ -9,7 +9,7 @@ const Header = () => {
   const {categories} = useContext(MenuContext);
   function seeAll(flag) {
     if (flag == 0) {
-      console.log('show');
+      // console.log('show');
       document.querySelector('.allCategories').style.display = 'block';
     }
     else if (flag == 1){

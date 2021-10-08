@@ -25,7 +25,6 @@ class MyApp extends App {
     let recentPostsJson = await resList.json(); // 列表信息
     recentPostsJson = recentPostsJson.response; // 列表信息
 
-    console.log('recentPostsJson:',recentPostsJson);
 
     this.setState({
       recentPosts: recentPostsJson,
