@@ -7,11 +7,11 @@ const FootCustom = (props) => {
     return (
         <footer className = {styles.siteFoot}>
             <div className = {styles.socialMedia}>
-            <ul>
+            {/* <ul>
                 <li>微博</li>
                 <li>公众号</li>
                 <li>bilibili</li>
-            </ul>
+            </ul> */}
             </div>
             <div className = {styles.copyright}>
             <a href="http://beian.miit.gov.cn/" >沪ICP备19023642号</a>
